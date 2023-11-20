@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from './pages/Home/index';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+// Layouts
+import Header from './layouts/Header';
+// Pages
+import Home from './pages/Home/index';
+import APropos from './pages/A-Propos/index'
+import FLogement from './pages/Fiche-Logement/index'
+import Error from './pages/Error/index'
+// Style
 import './style/main.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Home />
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/a-propos" element={<APropos />} />
+        <Route path="/logement" element={<FLogement />} />
+      </Routes>
+    </Router>
+    
   </React.StrictMode>
 );
 
