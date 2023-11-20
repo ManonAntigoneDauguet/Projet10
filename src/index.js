@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 // Layouts
 import Header from './layouts/Header';
+import Footer from './layouts/Footer';
 // Pages
 import Home from './pages/Home/index';
 import APropos from './pages/A-Propos/index'
@@ -22,8 +23,8 @@ root.render(
         <Route path="/a-propos" element={<APropos />} />
         <Route path="/logement" element={<FLogement />} />
       </Routes>
+      <Footer />
     </Router>
-    
   </React.StrictMode>
 );
 
