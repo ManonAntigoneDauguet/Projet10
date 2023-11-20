@@ -1,4 +1,8 @@
+@import "./utils/_variables.scss";
+
 * {
     padding: 0;
     margin: 0;
+    color: $color-primary;
+    font-family: $font-family;
 }
