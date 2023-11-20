@@ -11,16 +11,20 @@
 body {
     max-width: 1440px;
     margin: auto;
-    background-color: gray;
 }
 
 header {
-    background-color: white;
     max-width: 1240px;
     box-sizing: border-box;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.header__content {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;   
+    justify-content: space-between;      
 }
 
 nav {
@@ -32,5 +36,9 @@ nav {
     font-size: 24px;
     a {
         text-decoration: none;
+    }
+    .current {
+        text-decoration: underline;
+        text-decoration-thickness: 1.5px;
     }
 }
