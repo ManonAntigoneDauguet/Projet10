@@ -1,0 +1,47 @@
+@import "../../style/utils/variables";
+@import "../../style/utils/mixins";
+
+header {
+    max-width: 1240px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    @include mobile-only {
+        padding: 20px;
+    }
+}
+
+.header__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+    img {
+        @include mobile-only {
+            height: 47px;
+        }
+    }    
+}
+
+nav {
+    height: 68px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 57px;
+    font-size: 24px;
+    a {
+        color: $color-primary; 
+        text-decoration: none;
+    }
+    .current {
+        text-decoration: underline;
+        text-decoration-thickness: 1.5px;
+    }
+    @include mobile-only {
+        font-size: 12px;
+        gap: 26px;
+        text-transform: uppercase;
+        height: 47px;
+    }
+}
