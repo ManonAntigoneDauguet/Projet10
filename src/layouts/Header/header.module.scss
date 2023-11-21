@@ -6,7 +6,7 @@ header {
     box-sizing: border-box;
     margin: 0 auto;
     padding-top: 40px;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
     @include mobile-only {
         padding: 20px;
     }
@@ -31,7 +31,7 @@ nav {
     gap: 57px;
     font-size: 24px;
     a {
-        color: $color-primary; 
+        color: $primary-color; 
         text-decoration: none;
     }
     .current {

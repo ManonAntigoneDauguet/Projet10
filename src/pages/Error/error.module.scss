@@ -8,7 +8,7 @@
     gap: 139px;
     padding-bottom: 100px;
     text-align: center;
-    color: $color-primary;
+    color: $primary-color;
     @include mobile-only {
         gap: 113px;
         padding: 50px;
@@ -35,7 +35,7 @@
 
 .backLink {
     font-size: 18px;
-    color: $color-primary;
+    color: $primary-color;
     @include mobile-only {
         font-size: 14px;
     }
