@@ -1,0 +1,42 @@
+@import "../../style/utils/variables";
+@import "../../style/utils/mixins";
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 139px;
+    padding-bottom: 100px;
+    text-align: center;
+    color: $color-primary;
+    @include mobile-only {
+        gap: 113px;
+        padding: 50px;
+    }
+}
+
+.errorCode {
+    position: relative;
+    top: 40px;
+    font-size: 288px;
+    font-weight: 700;
+    @include mobile-only {
+        font-size: 96px;
+        top: 20px;
+    }
+}
+
+.errorDescription {
+    font-size: 36px;
+    @include mobile-only {
+        font-size: 18px;
+    }
+}
+
+.backLink {
+    font-size: 18px;
+    color: $color-primary;
+    @include mobile-only {
+        font-size: 14px;
+    }
+}
