@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import style from "./collapse.module.scss"
-import arrow from "../../assets/chevron.svg"
+import arrow from "../../assets/arrow.svg"
+
 
 function Collapse({ category, details }) {
     const [isOpen, setIsOpen] = useState(false)
@@ -14,14 +15,29 @@ function Collapse({ category, details }) {
     }    
 
     return (
-        <div className={isOpen ? `${style.collapseOpen}` : `${style.collapse}` }>
-            <div className={ style.labelContainer }>
-                <label htmlFor="fiabilite">{ category }</label>
-                <img src={ arrow } alt={isOpen ? "refermer" : "étendre"} style={{transform: isOpen ? "" : "rotate(-180deg)"}} />
+        <div className={isOpen ? `${style.collapse__Open}` : `${style.collapse__Close}` }>
+            <div className={ style.categoryContainer }>
+                <label htmlFor="fiabilite">
+                    { category }
+                </label>
+                <img 
+                    className={ style.collapseArrow }
+                    src={ arrow } 
+                    alt={isOpen ? "refermer" : "étendre"} 
+                    style={{transform: isOpen ? "" : "rotate(-180deg)"}} 
+                />
             </div>
-            <input type="checkbox" id="fiabilite" name="fiabilite" onChange={ handleChange }></input>
+            <input 
+                className={ style.collapseCheckbox }
+                type="checkbox" 
+                id="fiabilite" 
+                name="fiabilite" 
+                onChange={ handleChange }>
+            </input>
             <div className={ style.detailsContainer }>
-                <p>{ details }</p>
+                <p>
+                    { details }
+                </p>
             </div>
         </div>        
     )
