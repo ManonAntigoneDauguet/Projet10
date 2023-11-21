@@ -15,11 +15,16 @@
 }
 
 .collapse {
-    height: 52px;    
+    height: 52px;   
+    animation: closing 400ms both ease-in-out;
+    animation-delay: 000ms;
 }
 
 .collapseOpen {
-    height: content;
+    height: auto;
+    animation: opening 400ms both ease-in;
+    animation-delay: 000ms;
+    animation-fill-mode: backwards;
 }
 
 input {
@@ -67,5 +72,23 @@ input {
     p {
         opacity: 1;
         transition: 200ms;
+    }
+}
+
+@keyframes opening {
+    0% {
+        height: 52px; 
+    }
+    100% {
+        height: 150px;
+    }
+}
+
+@keyframes closing {
+    0% {
+        height: 100px; 
+    }
+    100% {
+        height: 52px;
     }
 }
