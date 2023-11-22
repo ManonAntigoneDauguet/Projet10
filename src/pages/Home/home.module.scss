@@ -1,7 +1,7 @@
 @import "../../style/utils/variables";
 @import "../../style/utils/mixins";
 
-.apropos__content {
+.home__content {
     max-width: 1240px;
     margin: 0 auto;
     @include mobile-only {
@@ -12,12 +12,16 @@
 .imgContainer {
     position: relative;
     height: 223px;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @include mobile-only {
         height: 111px;
-    }    
+        justify-content: left;
+    }   
     &__img, &__bg {
         width: 100%;
-        height: 100%;
+        height: 100%;   
         border-radius: 25px; 
         @include mobile-only {
             border-radius: 10px;
@@ -27,14 +31,27 @@
         position: absolute;
         top: 0;
         left: 0;
-        background-image: url(../../assets/Image_source_2.png);
+        background-image: url(../../assets/Image_source_1.png);
         background-position: center;   
         background-repeat: no-repeat;
         background-size: cover;  
     }
     &__bg {
-        position: relative;
+        position: absolute;
         background-color: rgba(0, 0, 0, 0.3);    
+    }
+    &__tag {
+        text-align: center;
+        position: absolute;
+        font-size: 48px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 1);
+        @include mobile-only {
+            text-align: left;
+            font-size: 24px;
+            padding-left: 20px;
+            width: 217px;
+        }
     }
 }
 
