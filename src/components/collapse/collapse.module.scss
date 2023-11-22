@@ -82,7 +82,7 @@
 
 /****************** CONTAINER OF DETAILS *************/
 .detailsContainer {
-    padding: 20px;
+    padding: 15px 20px 20px 20px;
     background-color: $secondary-color;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -99,6 +99,7 @@
     }
     @include mobile-only {
         font-size: 12px;
+        padding: 10px 20px 15px 20px
     }
 }
 
