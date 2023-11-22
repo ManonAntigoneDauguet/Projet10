@@ -1,7 +1,6 @@
 import data from '../../data/data.json'
-import { Link } from 'react-router-dom'
 import style from './home.module.scss'
-import picture from '../../assets/test.png'
+import LctCard from './LctCard'
 
 
 function Home() {
@@ -15,38 +14,14 @@ function Home() {
       </div>
 
       <div className={ style.lctContainer }>
-        <Link to='/logement' className={ style.lctCard }>
-          <img 
-            src={ picture } 
-            alt='logement en location' 
-            className={ style.lctCard__img }
+        {data.map(({id, title, pictures}) => (
+          <LctCard
+            key={ id }
+            id={ id }
+            title={ title }
+            picture={ pictures[0] }
           />
-          <h2 className={ style.lctCard__title }>
-            Titre de la location
-          </h2>
-        </Link>
-
-        <Link to='/logement' className={ style.lctCard }>
-          <img 
-            src={ picture } 
-            alt='logement en location' 
-            className={ style.lctCard__img }
-          />
-          <h2 className={ style.lctCard__title }>
-            Titre de la location
-          </h2>
-        </Link>
-
-        <Link to='/logement' className={ style.lctCard }>
-          <img 
-            src={ picture } 
-            alt='logement en location' 
-            className={ style.lctCard__img }
-          />
-          <h2 className={ style.lctCard__title }>
-            Titre de la location
-          </h2>
-        </Link>
+        ))}
       </div>
 
     </div>
