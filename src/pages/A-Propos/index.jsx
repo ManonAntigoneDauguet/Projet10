@@ -1,20 +1,25 @@
 import style from "./apropos.module.scss"
 import Collapse from "../../components/collapse";
 
+
 const collapses = [
   {
+    "index": 1,
     "category": "Fiabilité",
     "details": "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."
   },
   {
+    "index": 2,
     "category": "Respect",
     "details": "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."
   },
   {
+    "index": 3,
     "category": "Service",
     "details": "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."
   },
   {
+    "index": 4,
     "category": "Sécurité",
     "details": "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."
   }
@@ -32,7 +37,7 @@ function APropos() {
 
         <div className={ style.txtContainer }>
           {collapses.map(({category, details, index}) => (
-            <Collapse key={category} category={category} details={details} />
+            <Collapse key={index} category={category} details={details} />
           ))}
 
         </div>
@@ -40,5 +45,5 @@ function APropos() {
     );
   }
   
-  export default APropos;
+export default APropos;
   
