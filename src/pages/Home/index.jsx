@@ -2,6 +2,7 @@ import data from '../../data/data.json'
 import { Link } from 'react-router-dom'
 import style from './home.module.scss'
 
+
 function Home() {
   return (
     <div className={ style.home__content }>

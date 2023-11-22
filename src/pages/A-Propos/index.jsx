@@ -1,6 +1,7 @@
 import style from "./apropos.module.scss"
 import Collapse from "../../components/collapse";
 
+
 const collapses = [
   {
     "category": "Fiabilité",
