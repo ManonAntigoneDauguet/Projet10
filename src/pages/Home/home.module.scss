@@ -11,14 +11,56 @@
     @include pagePresentationImg("../../assets/Image_source_1.png");
 }
 
-.txtContainer {
-    position: relative;
-    padding: 40px 100px 25px 100px;
+.lctContainer {
+    padding: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 25px;
+    background-color:  $secondary-color;    
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
     @include mobile-only {
-        gap: 20px;
+        background-color: white;
+        margin: 0;
+        gap: 22px;
         padding: 20px 0px 5px 0px;
+        flex-direction: column;
+    }
+}
+
+.lctCard {
+    background: $primary-color;
+    height: 340px;
+    width: 340px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    @include mobile-only {
+        height: 255px;
+        width: 100%;
+    }
+    &__img {
+        object-fit: cover;
+        width: 100%;
+        height: 255px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        @include mobile-only {
+            height: 170px;
+        }
+    }
+    &__title {
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+        width: 40%;
+        padding-left: 20px;
+        padding-top: 10px;
+        line-height: 25.67px;
+        @include mobile-only {
+            padding-bottom: 20px;
+        }
     }
 }

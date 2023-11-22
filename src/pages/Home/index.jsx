@@ -1,6 +1,7 @@
 import data from '../../data/data.json'
 import { Link } from 'react-router-dom'
 import style from './home.module.scss'
+import picture from '../../assets/test.png'
 
 
 function Home() {
@@ -13,8 +14,39 @@ function Home() {
         <span className={ style.imgContainer__tag }>Chez vous, partout et ailleurs</span>
       </div>
 
-      <div className={ style.txtContainer }>
-        <Link to='/logement'>Logements</Link>
+      <div className={ style.lctContainer }>
+        <Link to='/logement' className={ style.lctCard }>
+          <img 
+            src={ picture } 
+            alt='logement en location' 
+            className={ style.lctCard__img }
+          />
+          <h2 className={ style.lctCard__title }>
+            Titre de la location
+          </h2>
+        </Link>
+
+        <Link to='/logement' className={ style.lctCard }>
+          <img 
+            src={ picture } 
+            alt='logement en location' 
+            className={ style.lctCard__img }
+          />
+          <h2 className={ style.lctCard__title }>
+            Titre de la location
+          </h2>
+        </Link>
+
+        <Link to='/logement' className={ style.lctCard }>
+          <img 
+            src={ picture } 
+            alt='logement en location' 
+            className={ style.lctCard__img }
+          />
+          <h2 className={ style.lctCard__title }>
+            Titre de la location
+          </h2>
+        </Link>
       </div>
 
     </div>
