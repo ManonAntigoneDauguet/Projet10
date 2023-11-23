@@ -1,0 +1,22 @@
+@import "../../style/utils/variables";
+@import "../../style/utils/mixins";
+
+
+.tag {
+    background-color: $primary-color;
+    height: 25px;    
+    min-width: 115px;
+    font-size: 14px;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 10px;
+    @include mobile-only {
+        height: 18px;
+        min-width: 84px;
+        font-size: 10px;
+    }
+}

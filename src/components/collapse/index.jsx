@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import style from "./collapse.module.scss"
-import arrow from "../../assets/arrow_down.svg"
+import arrow from "../../assets/arrow_up.svg"
 
 
 function Collapse({ category, details, isLittleLabel }) {
@@ -23,8 +23,8 @@ function Collapse({ category, details, isLittleLabel }) {
                 <img 
                     className={ style.collapseArrow }
                     src={ arrow } 
-                    alt={isOpen ? "refermer" : "étendre"} 
-                    style={{transform: isOpen ? "" : "rotate(-180deg)"}} 
+                    alt={ isOpen ? "refermer" : "étendre" } 
+                    style={{transform: isOpen ? "rotate(-180deg)" : ""}} 
                 />
             </div>
             <input 

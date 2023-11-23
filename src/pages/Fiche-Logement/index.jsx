@@ -4,6 +4,10 @@ import style from './fLogement.module.scss'
 import backArrow from '../../assets/arrow_back.svg'
 import forwardArrow from '../../assets/arrow_forward.svg'
 import Collapse from "../../components/collapse";
+import Tag from '../../components/tag'
+import Stars from './Stars'
+import Profile from './Profile'
+import Carousel from './Carousel'
 
 
 function FLogement() {
@@ -13,51 +17,28 @@ function FLogement() {
     return (
       <div className={ style.fLogement__content }>
 
-        <div className={ style.carouselContainer }>
-          <img 
-            className={ style.carouselContainer__img}
-            alt={ location.title }
-            src={ location.pictures[0] }
-          />
-          <span className={ style.carouselContainer__index}>
-            { `xxx/${ location.pictures.length }` }
-          </span>
-          <div className={ style.carouselContainer__arrows}>
-            <img 
-              src={ backArrow } 
-              alt='précédente'
-          />
-            <img 
-              src={ forwardArrow } 
-              alt='suivante'
-          />
-          </div>
-        </div>
+        <Carousel
+          title={ location.title }
+          pictures={ location.pictures }
+        />
 
         <div className={ style.txtContainer }>
           <div className={ style.txtContainer__left }>
-            <h1>
-              { location.title }
-            </h1>
-            <span>
-              { location.location }
-            </span>
-            <div className={ style.tagsContainer }></div>
+            <h1>{ location.title }</h1>
+            <span>{ location.location }</span>
+            <div className={ style.tagsContainer }>
+              { location.tags.map((e) => (
+                <Tag tag={ e } key={ e } />
+              ))}
+            </div>
           </div>
+
           <div className={ style.txtContainer__right }>
-            <div className={ style.profile }>
-              <p>
-                { location.host.name }
-              </p>
-              <img 
-                src={ location.host.picture }
-                alt="profil"
-                className={ style.profilePicture }
-              />              
-            </div>
-            <div>
-              <span>!!!!!!!!!!</span>
-            </div>
+            <Profile 
+              name={ location.host.name } 
+              picture={ location.host.picture }
+            />
+            <Stars rating={location.rating} />
           </div>
         </div>
         
@@ -70,7 +51,7 @@ function FLogement() {
           <Collapse
             category="Equipements"
             details={ location.equipments.map((e, index) => (
-              <li key={index}>{e}</li>
+              <li key={index}>{ e }</li>
             )) }
             isLittleLabel={ true }
           />          
@@ -80,4 +61,4 @@ function FLogement() {
     );
   }
   
-  export default FLogement;
+  export default FLogement

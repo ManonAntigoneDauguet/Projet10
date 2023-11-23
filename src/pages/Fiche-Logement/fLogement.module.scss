@@ -10,6 +10,8 @@
     }
 }
 
+
+/****************** CONTAINER OF CAROUSEL *************/
 .carouselContainer {
     position: relative;
     height: 415px;
@@ -59,6 +61,8 @@
     }
 }
 
+
+/****************** TEXT CONTAINER *************/
 .txtContainer {
     position: relative;
     padding: 30px 0 25px 0px;
@@ -82,12 +86,14 @@
         @include mobile-only {
             flex-direction: row-reverse;
             justify-content: space-between;
+            height: 33px;
+            align-items: center;
         }
     }
     &__left {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
     }
 }
 
@@ -99,47 +105,29 @@ h1 {
     }
 }
 
+
+/****************** TAGS CONTAINER *************/
 .tagsContainer {
-    padding-top: 5px;
-    height: 25px;
-    background-color: $primary-color;
+    padding-top: 15px;
     display: flex;
     flex-direction: row;
-    gap: 5px;
-}
-
-.profile {
-    height: 64px;
-    width: 200px;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-    gap: 15px;
+    gap: 10px;
     @include mobile-only {
-        height: 33px;
-        width: 135px;
+        padding-top: 5px;
     }
 }
 
-.profilePicture {
-    object-fit: cover;
-    height: 64px;
-    width: 64px;
-    clip-path: circle(50% at 50% 50%);
-    @include mobile-only {
-        height: 32px;
-        width: 32px;
-    }
-}  
 
+/****************** COLLAPSES CONTAINER *************/
 .collapseContainer {
     display: flex;
     flex-direction: row;
     gap: 5%;
+    padding-bottom: 25px;
     @include mobile-only {
         padding-top: 10px;
+        padding-bottom: 5px;
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
     }
 }
