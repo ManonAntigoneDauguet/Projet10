@@ -2,6 +2,7 @@ import style from './fLogement.module.scss'
 import imgTest from '../../assets/Carrousel.png'
 import backArrow from '../../assets/arrow_back.svg'
 import forwardArrow from '../../assets/arrow_forward.svg'
+import Collapse from "../../components/collapse";
 
 
 function FLogement() {
@@ -36,12 +37,12 @@ function FLogement() {
             <div className={ style.tagsContainer }></div>
           </div>
           <div className={ style.txtContainer__right }>
-            <div className={ style.profil }>
+            <div className={ style.profile }>
               <p>Alexandra Dumas</p>
               <img 
                 src={ imgTest }
                 alt="profil"
-                className={ style.profilPicture }
+                className={ style.profilePicture }
               />              
             </div>
             <div>
@@ -49,6 +50,18 @@ function FLogement() {
             </div>
           </div>
         </div>
+        
+        <div className={ style.collapseContainer }>
+          <Collapse
+            category="Description"
+            details="...."
+          />
+          <Collapse
+            category="Equipements"
+            details="....."
+          />          
+        </div>
+
       </div>
     );
   }

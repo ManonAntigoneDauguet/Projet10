@@ -71,7 +71,6 @@
     }
     &__right {
         text-align: end;
-        background-color: gray;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -105,16 +104,20 @@ h1 {
 }
 
 .profile {
-    display: flex;
-    // flex-direction: row;
-    // justify-content: center;
-    // align-items: center;
-    // flex-wrap: nowrap;
     height: 64px;
-    width: 100px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 15px;
+    @include mobile-only {
+        height: 33px;
+        width: 135px;
+    }
 }
 
-.profilPicture {
+.profilePicture {
     object-fit: cover;
     height: 64px;
     width: 64px;
@@ -124,3 +127,14 @@ h1 {
         width: 32px;
     }
 }  
+
+.collapseContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    @include mobile-only {
+        padding-top: 10px;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
