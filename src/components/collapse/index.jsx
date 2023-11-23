@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import style from "./collapse.module.scss"
-import arrow from "../../assets/arrow.svg"
+import arrow from "../../assets/arrow_down.svg"
 
 
 function Collapse({ category, details }) {

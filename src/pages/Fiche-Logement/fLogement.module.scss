@@ -1,0 +1,55 @@
+@import "../../style/utils/variables";
+@import "../../style/utils/mixins";
+
+
+.fLogement__content {
+    max-width: 1240px;
+    margin: 0 auto;
+    @include mobile-only {
+        padding: 0 20px;
+    }
+}
+
+.carouselContainer {
+    position: relative;
+    height: 415px;
+    width: 100%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mobile-only {
+        height: 255px;
+    }
+    &__img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 25px;
+    }
+    &__index {
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        bottom: 25px;
+        font-size: 24px;
+        color: white;
+        @include mobile-only {
+            opacity: 0;
+        }
+    }
+    &__arrows {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        img {
+            height: 79.2px;
+            cursor: pointer;
+            @include mobile-only {
+                height: 24px;
+            }
+        }
+    }
+}
