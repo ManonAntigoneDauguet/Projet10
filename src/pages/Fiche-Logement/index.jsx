@@ -1,22 +1,26 @@
+import { useParams } from 'react-router-dom'
+import data from '../../data/data.json'
 import style from './fLogement.module.scss'
-import imgTest from '../../assets/Carrousel.png'
 import backArrow from '../../assets/arrow_back.svg'
 import forwardArrow from '../../assets/arrow_forward.svg'
 import Collapse from "../../components/collapse";
 
 
 function FLogement() {
+  const { locationId } = useParams()
+  const location = data.filter((e) => e.id === locationId)[0]
+
     return (
       <div className={ style.fLogement__content }>
 
         <div className={ style.carouselContainer }>
           <img 
             className={ style.carouselContainer__img}
-            alt='xxx'
-            src={ imgTest }
+            alt={ location.title }
+            src={ location.pictures[0] }
           />
           <span className={ style.carouselContainer__index}>
-            xxx/xxx
+            { `xxx/${ location.pictures.length }` }
           </span>
           <div className={ style.carouselContainer__arrows}>
             <img 
@@ -32,15 +36,21 @@ function FLogement() {
 
         <div className={ style.txtContainer }>
           <div className={ style.txtContainer__left }>
-            <h1>Cozy loft on the Canal Saint-Martin</h1>
-            <span>Paris, Île-de-France</span>
+            <h1>
+              { location.title }
+            </h1>
+            <span>
+              { location.location }
+            </span>
             <div className={ style.tagsContainer }></div>
           </div>
           <div className={ style.txtContainer__right }>
             <div className={ style.profile }>
-              <p>Alexandra Dumas</p>
+              <p>
+                { location.host.name }
+              </p>
               <img 
-                src={ imgTest }
+                src={ location.host.picture }
                 alt="profil"
                 className={ style.profilePicture }
               />              
@@ -54,11 +64,15 @@ function FLogement() {
         <div className={ style.collapseContainer }>
           <Collapse
             category="Description"
-            details="...."
+            details={ location.description }
+            isLittleLabel={ true }
           />
           <Collapse
             category="Equipements"
-            details="....."
+            details={ location.equipments.map((e, index) => (
+              <li key={index}>{e}</li>
+            )) }
+            isLittleLabel={ true }
           />          
         </div>
 

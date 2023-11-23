@@ -36,10 +36,14 @@ function APropos() {
         </div>
 
         <div className={ style.txtContainer }>
-          {collapses.map(({category, details, index}) => (
-            <Collapse key={index} category={category} details={details} />
+          {collapses.map(({ category, details, index }) => (
+            <Collapse 
+              key={ index}  
+              category={ category } 
+              details={ details } 
+              isLittleLabel={ false }
+            />
           ))}
-
         </div>
       </div>
     );

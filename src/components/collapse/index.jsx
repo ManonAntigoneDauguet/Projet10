@@ -3,7 +3,7 @@ import style from "./collapse.module.scss"
 import arrow from "../../assets/arrow_down.svg"
 
 
-function Collapse({ category, details }) {
+function Collapse({ category, details, isLittleLabel }) {
     const [isOpen, setIsOpen] = useState(false)
 
     function handleChange(e) {
@@ -17,7 +17,7 @@ function Collapse({ category, details }) {
     return (
         <div className={isOpen ? `${style.collapse__Open}` : `${style.collapse__Close}` }>
             <div className={ style.categoryContainer }>
-                <label htmlFor="fiabilite">
+                <label htmlFor="fiabilite" className={ isLittleLabel ? style.littleLabel : style.bigLabel } >
                     { category }
                 </label>
                 <img 
