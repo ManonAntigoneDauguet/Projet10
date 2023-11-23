@@ -30,8 +30,24 @@ function FLogement() {
         </div>
 
         <div className={ style.txtContainer }>
-
-
+          <div className={ style.txtContainer__left }>
+            <h1>Cozy loft on the Canal Saint-Martin</h1>
+            <span>Paris, Île-de-France</span>
+            <div className={ style.tagsContainer }></div>
+          </div>
+          <div className={ style.txtContainer__right }>
+            <div className={ style.profil }>
+              <p>Alexandra Dumas</p>
+              <img 
+                src={ imgTest }
+                alt="profil"
+                className={ style.profilPicture }
+              />              
+            </div>
+            <div>
+              <span>!!!!!!!!!!</span>
+            </div>
+          </div>
         </div>
       </div>
     );
