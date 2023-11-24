@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import { CurrentPageProvider } from './utils/context';
 // Layouts
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
@@ -15,16 +16,19 @@ import './style/main.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  
   <React.StrictMode>
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/a-propos" element={<APropos />} />
-        <Route path="/logement/:locationId" element={<FLogement />} />
-        <Route path='*' element={<Error />} />
-      </Routes>
-      <Footer />
+      <CurrentPageProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/a-propos" element={<APropos />} />
+          <Route path="/logement/:locationId" element={<FLogement />} />
+          <Route path='*' element={<Error />} />
+        </Routes>
+        <Footer />
+      </CurrentPageProvider>  
     </Router>
   </React.StrictMode>
 );

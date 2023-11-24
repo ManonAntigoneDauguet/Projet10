@@ -31,7 +31,6 @@
 .categoryContainer {
     background-color: $primary-color;
     box-sizing: border-box;
-    padding: 12px 15px;
     height: 52px;
     display: flex;
     flex-direction: row;
@@ -41,8 +40,22 @@
     border-radius: 5px;    
     @include mobile-only {
         height: 30px;
-        font-size: 13px;
-        padding: 6px 10px 5px 10px;
+    } 
+    .littleLabel {
+        font-size: 18px;
+        padding: 15px;
+        @include mobile-only {
+            font-size: 13px;
+            padding: 6px 10px 5px 10px;
+        }
+    }
+    .bigLabel {
+        font-size: 24px;
+        padding: 12px 15px;
+        @include mobile-only {
+            font-size: 13px;
+            padding: 6px 10px 5px 10px;
+        }
     }
 }
 
@@ -53,7 +66,7 @@
     right: 10px;
     top: 10px;
     @include mobile-only {
-        top: 5px;
+        top: 0px;
         height: 25px;
         width: 25px;
     }
@@ -93,6 +106,9 @@
     transform: scaleY(0);
     transform-origin: top;
     transition: 300ms ease-in-out;
+    li {
+        list-style: none;
+    }
     p {
         opacity: 1;
         transition: 200ms;

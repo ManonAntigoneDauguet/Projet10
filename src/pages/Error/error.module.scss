@@ -37,6 +37,7 @@
     font-size: 18px;
     color: $primary-color;
     padding-bottom: 40px;
+    text-decoration: underline;
     @include mobile-only {
         font-size: 14px;
     }

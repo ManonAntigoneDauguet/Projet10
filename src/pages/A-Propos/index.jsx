@@ -1,5 +1,7 @@
 import style from "./apropos.module.scss"
-import Collapse from "../../components/collapse";
+import Collapse from "../../components/collapse"
+import { CurrentPageContext } from "../../utils/context"
+import { useContext, useEffect } from "react"
 
 
 const collapses = [
@@ -27,23 +29,33 @@ const collapses = [
 
 
 function APropos() {
-    return (
-      <div className={ style.apropos__content }>
+  const { updateCurrentPage } = useContext(CurrentPageContext)  
+  useEffect(() => {
+    updateCurrentPage('apropos')
+    document.title = "Kasa - A Propos"
+  })
 
-        <div className={ style.imgContainer }>
-          <div className={ style.imgContainer__img}></div>
-          <div className={ style.imgContainer__bg }></div>
-        </div>
+  return (
+    <div className={ style.apropos__content }>
 
-        <div className={ style.txtContainer }>
-          {collapses.map(({category, details, index}) => (
-            <Collapse key={index} category={category} details={details} />
-          ))}
-
-        </div>
+      <div className={ style.imgContainer }>
+        <div className={ style.imgContainer__img}></div>
+        <div className={ style.imgContainer__bg }></div>
       </div>
-    );
-  }
+
+      <div className={ style.txtContainer }>
+        {collapses.map(({ category, details, index }) => (
+          <Collapse 
+            key={ index}  
+            category={ category } 
+            details={ details } 
+            isLittleLabel={ false }
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
   
 export default APropos;
   

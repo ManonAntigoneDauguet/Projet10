@@ -1,0 +1,133 @@
+@import "../../style/utils/variables";
+@import "../../style/utils/mixins";
+
+
+.fLogement__content {
+    max-width: 1240px;
+    margin: 0 auto;
+    @include mobile-only {
+        padding: 0 20px;
+    }
+}
+
+
+/****************** CONTAINER OF CAROUSEL *************/
+.carouselContainer {
+    position: relative;
+    height: 415px;
+    width: 100%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mobile-only {
+        height: 255px;
+    }
+    &__img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 25px;
+    }
+    &__index {
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        bottom: 25px;
+        font-size: 18px;
+        color: white;
+        @include mobile-only {
+            opacity: 0;
+        }
+    }
+    &__arrows {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        img {
+            transform: scale(1);
+            transition: 200ms ease-in-out;
+            height: 79.2px;
+            cursor: pointer;
+            &:active {
+                transform: scale(0.8);
+            }
+            @include mobile-only {
+                height: 24px;
+            }
+        }
+    }
+}
+
+
+/****************** TEXT CONTAINER *************/
+.txtContainer {
+    position: relative;
+    padding: 30px 0 25px 0px;
+    color: $primary-color;
+    font-size: 18px;    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include mobile-only {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 15px;
+        padding: 15px 0px 5px 0px;
+        font-size: 12px;
+    }
+    &__right {
+        text-align: end;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        @include mobile-only {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            height: 33px;
+            align-items: center;
+        }
+    }
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 500;
+    @include mobile-only {
+        font-size: 18px;
+    }
+}
+
+
+/****************** TAGS CONTAINER *************/
+.tagsContainer {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    @include mobile-only {
+        padding-top: 5px;
+    }
+}
+
+
+/****************** COLLAPSES CONTAINER *************/
+.collapseContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    padding-bottom: 25px;
+    @include mobile-only {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
