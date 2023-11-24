@@ -13,7 +13,8 @@ import { useContext, useEffect } from "react"
 function FLogement() {
   const { updateCurrentPage } = useContext(CurrentPageContext)  
   useEffect(() => {
-    updateCurrentPage('flogement')    
+    updateCurrentPage('flogement') 
+    document.title = `Kasa - ${ location.title }`   
   })
 
   const { locationId } = useParams()

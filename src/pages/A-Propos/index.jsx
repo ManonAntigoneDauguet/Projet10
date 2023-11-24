@@ -32,6 +32,7 @@ function APropos() {
   const { updateCurrentPage } = useContext(CurrentPageContext)  
   useEffect(() => {
     updateCurrentPage('apropos')
+    document.title = "Kasa - A Propos"
   })
 
   return (

@@ -9,6 +9,7 @@ function Home() {
   const { updateCurrentPage } = useContext(CurrentPageContext)  
   useEffect(() => {
     updateCurrentPage('home')    
+    document.title = "Kasa"
   })
 
   return (
