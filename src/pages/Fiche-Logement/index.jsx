@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import data from '../../data/data.json'
 import style from './fLogement.module.scss'
 import Collapse from "../../components/collapse";
@@ -11,18 +11,23 @@ import { useContext, useEffect } from "react"
 
 
 function FLogement() {
+  const navigate = useNavigate();  
   const { updateCurrentPage } = useContext(CurrentPageContext)  
-  useEffect(() => {
-    updateCurrentPage('flogement') 
-    document.title = `Kasa - ${ location.title }`   
-  })
-
   const { locationId } = useParams()
   const location = data.filter((e) => e.id === locationId)[0]
 
+  useEffect(() => {
+    if (location === undefined) {
+      navigate("*");
+    } else {
+      updateCurrentPage('flogement') 
+      document.title = `Kasa - ${ location.title }`   
+    }
+  })
+
+  if (location !== undefined) {
     return (
       <div className={ style.fLogement__content }>
-
         <Carousel
           title={ location.title }
           pictures={ location.pictures }
@@ -47,7 +52,7 @@ function FLogement() {
             <Stars rating={ location.rating } />
           </div>
         </div>
-        
+          
         <div className={ style.collapseContainer }>
           <Collapse
             category="Description"
@@ -62,9 +67,10 @@ function FLogement() {
             isLittleLabel={ true }
           />          
         </div>
-
       </div>
-    );
+    )    
   }
+
+}
   
   export default FLogement
