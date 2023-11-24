@@ -3,13 +3,12 @@ import inactiveStar from "../../assets/star-inactive.svg"
 import style from "./stars.module.scss"
 
 
-function Stars( rating ) {
+function Stars({ rating }) {
     const rate = [1, 2, 3, 4, 5]
-
     return (
         <div className={ style.starsContainer }>
             { rate.map((r) => (
-                r > rating 
+                rating <  r
                 ? <img 
                     src={ inactiveStar } 
                     alt={`${ rating } étoiles`} 

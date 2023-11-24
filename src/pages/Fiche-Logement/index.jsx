@@ -1,16 +1,21 @@
 import { useParams } from 'react-router-dom'
 import data from '../../data/data.json'
 import style from './fLogement.module.scss'
-import backArrow from '../../assets/arrow_back.svg'
-import forwardArrow from '../../assets/arrow_forward.svg'
 import Collapse from "../../components/collapse";
 import Tag from '../../components/tag'
 import Stars from './Stars'
 import Profile from './Profile'
 import Carousel from './Carousel'
+import { CurrentPageContext } from "../../utils/context"
+import { useContext, useEffect } from "react"
 
 
 function FLogement() {
+  const { updateCurrentPage } = useContext(CurrentPageContext)  
+  useEffect(() => {
+    updateCurrentPage('flogement')    
+  })
+
   const { locationId } = useParams()
   const location = data.filter((e) => e.id === locationId)[0]
 
@@ -38,7 +43,7 @@ function FLogement() {
               name={ location.host.name } 
               picture={ location.host.picture }
             />
-            <Stars rating={location.rating} />
+            <Stars rating={ location.rating } />
           </div>
         </div>
         

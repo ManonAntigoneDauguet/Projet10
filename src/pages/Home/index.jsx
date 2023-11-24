@@ -1,9 +1,16 @@
 import data from '../../data/data.json'
 import style from './home.module.scss'
 import LctCard from './LctCard'
+import { CurrentPageContext } from "../../utils/context"
+import { useContext, useEffect } from "react"
 
 
 function Home() {
+  const { updateCurrentPage } = useContext(CurrentPageContext)  
+  useEffect(() => {
+    updateCurrentPage('home')    
+  })
+
   return (
     <div className={ style.home__content }>
 
@@ -14,12 +21,12 @@ function Home() {
       </div>
 
       <div className={ style.lctContainer }>
-        {data.map(({id, title, pictures}) => (
+        {data.map(({id, title, cover}) => (
           <LctCard
             key={ id }
             id={ id }
             title={ title }
-            picture={ pictures[0] }
+            picture={ cover }
           />
         ))}
       </div>
