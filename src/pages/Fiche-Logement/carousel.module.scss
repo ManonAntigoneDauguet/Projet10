@@ -50,3 +50,35 @@
         }
     }
 }
+
+.fadeInNext {
+    animation: fade-in-next 500ms;
+}
+
+.fadeInPrevious {
+    animation: fade-in-previous 500ms;
+}
+
+
+/****************** FADE-IN ANIMATIONS *************/
+@keyframes fade-in-next {
+    0% {
+        transform-origin: right;
+        transform: scaleX(0);
+    }
+    100% {
+        transform-origin: right;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes fade-in-previous {
+    0% {
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+    100% {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}

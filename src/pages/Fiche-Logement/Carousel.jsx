@@ -1,23 +1,29 @@
 import style from "./carousel.module.scss"
 import backArrow from '../../assets/arrow_back.svg'
 import forwardArrow from '../../assets/arrow_forward.svg'
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 
 function Carousel({ title, pictures }) {
+  const [pair, updatePair] = useState(true)
   const [slide, updateSlide] = useState(0)
+  const [animationClass, updateAnimationClass] = useState("")
 
   function nextSlide(index) {
     index >= pictures.length ? updateSlide(0) : updateSlide(index)
+    updateAnimationClass(style.fadeInNext)
+    setTimeout(() => {updateAnimationClass("")}, 500)
   }
   function previsousSlide(index) {
     index < 0 ? updateSlide(pictures.length-1) : updateSlide(index)
+    updateAnimationClass(style.fadeInPrevious)
+    setTimeout(() => {updateAnimationClass("")}, 500)
   }
 
   return (
     <div className={ style.carouselContainer }>
       <img 
-        className={ style.carouselContainer__img}
+        className={`${ style.carouselContainer__img} ${animationClass}`}
         alt={ title }
         src={ pictures[slide] }
       />
