@@ -1,11 +1,10 @@
 import style from "./carousel.module.scss"
 import backArrow from '../../assets/arrow_back.svg'
 import forwardArrow from '../../assets/arrow_forward.svg'
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 
 function Carousel({ title, pictures }) {
-  const [pair, updatePair] = useState(true)
   const [slide, updateSlide] = useState(0)
   const [animationClass, updateAnimationClass] = useState("")
 
@@ -23,7 +22,7 @@ function Carousel({ title, pictures }) {
   return (
     <div className={ style.carouselContainer }>
       <img 
-        className={`${ style.carouselContainer__img} ${animationClass}`}
+        className={`${ style.carouselContainer__img} ${ animationClass }`}
         alt={ title }
         src={ pictures[slide] }
       />
@@ -32,7 +31,7 @@ function Carousel({ title, pictures }) {
           <span className={ style.carouselContainer__index}>
             { `${slide + 1}/${ pictures.length }` }
           </span>
-          <div className={ style.carouselContainer__arrows}>
+          <div className={ style.carouselContainer__arrows }>
             <img 
               src={ backArrow } 
               alt='précédente'

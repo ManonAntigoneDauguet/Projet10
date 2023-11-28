@@ -15,16 +15,18 @@ function Collapse({ category, details, isLittleLabel }) {
     }    
 
     return (
-        <div className={isOpen ? `${style.collapse__Open}` : `${style.collapse__Close}` }>
+        <div className={ isOpen ? `${style.collapse__Open }` : `${ style.collapse__Close }` }>
             <div className={ style.categoryContainer }>
-                <label htmlFor="fiabilite" className={ isLittleLabel ? style.littleLabel : style.bigLabel } >
+                <label 
+                    htmlFor="fiabilite" 
+                    className={ isLittleLabel ? style.littleLabel : style.bigLabel } >
                     { category }
                 </label>
                 <img 
                     className={ style.collapseArrow }
                     src={ arrow } 
                     alt={ isOpen ? "refermer" : "étendre" } 
-                    style={{transform: isOpen ? "rotate(-180deg)" : ""}} 
+                    style={{ transform: isOpen ? "rotate(-180deg)" : "" }} 
                 />
             </div>
             <input 

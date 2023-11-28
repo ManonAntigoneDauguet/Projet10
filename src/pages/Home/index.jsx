@@ -16,9 +16,11 @@ function Home() {
     <div className={ style.home__content }>
 
       <div className={ style.imgContainer }>
-        <div className={ style.imgContainer__img}></div>
+        <div className={ style.imgContainer__img }></div>
         <div className={ style.imgContainer__bg }></div>
-        <span className={ style.imgContainer__title }>Chez vous, partout et ailleurs</span>
+        <span className={ style.imgContainer__title }>
+          Chez vous, partout et ailleurs
+        </span>
       </div>
 
       <div className={ style.lctContainer }>

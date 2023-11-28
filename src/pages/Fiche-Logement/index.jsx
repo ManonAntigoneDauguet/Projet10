@@ -5,7 +5,7 @@ import Collapse from "../../components/collapse";
 import Tag from '../../components/tag'
 import Stars from './Stars'
 import Profile from './Profile'
-import Carousel from './Carousel'
+import Carousel from '../../components/carousel';
 import { CurrentPageContext } from "../../utils/context"
 import { useContext, useEffect } from "react"
 
