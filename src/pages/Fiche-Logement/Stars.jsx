@@ -1,5 +1,5 @@
-import activeStar from "../../assets/star-active.svg"
-import inactiveStar from "../../assets/star-inactive.svg"
+import activeStar from "../../assets/star_active.svg"
+import inactiveStar from "../../assets/star_inactive.svg"
 import style from "./stars.module.scss"
 
 

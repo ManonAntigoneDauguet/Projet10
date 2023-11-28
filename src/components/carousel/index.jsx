@@ -6,18 +6,23 @@ import React, { useState } from "react"
 
 function Carousel({ title, pictures }) {
   const [slide, updateSlide] = useState(0)
+  const [animationClass, updateAnimationClass] = useState("")
 
   function nextSlide(index) {
     index >= pictures.length ? updateSlide(0) : updateSlide(index)
+    updateAnimationClass(style.fadeInNext)
+    setTimeout(() => {updateAnimationClass("")}, 500)
   }
   function previsousSlide(index) {
     index < 0 ? updateSlide(pictures.length-1) : updateSlide(index)
+    updateAnimationClass(style.fadeInPrevious)
+    setTimeout(() => {updateAnimationClass("")}, 500)
   }
 
   return (
     <div className={ style.carouselContainer }>
       <img 
-        className={ style.carouselContainer__img}
+        className={`${ style.carouselContainer__img} ${ animationClass }`}
         alt={ title }
         src={ pictures[slide] }
       />
@@ -26,7 +31,7 @@ function Carousel({ title, pictures }) {
           <span className={ style.carouselContainer__index}>
             { `${slide + 1}/${ pictures.length }` }
           </span>
-          <div className={ style.carouselContainer__arrows}>
+          <div className={ style.carouselContainer__arrows }>
             <img 
               src={ backArrow } 
               alt='précédente'
