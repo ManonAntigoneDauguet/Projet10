@@ -1,0 +1,84 @@
+@import "../../style/utils/variables";
+@import "../../style/utils/mixins";
+
+
+.carouselContainer {
+    position: relative;
+    height: 415px;
+    width: 100%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mobile-only {
+        height: 255px;
+    }
+    &__img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 25px;
+    }
+    &__index {
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        bottom: 25px;
+        font-size: 18px;
+        color: white;
+        @include mobile-only {
+            opacity: 0;
+        }
+    }
+    &__arrows {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        img {
+            transform: scale(1);
+            transition: 200ms ease-in-out;
+            height: 79.2px;
+            cursor: pointer;
+            &:active {
+                transform: scale(0.8);
+            }
+            @include mobile-only {
+                height: 24px;
+            }
+        }
+    }
+}
+
+.fadeInNext {
+    animation: fade-in-next 500ms;
+}
+
+.fadeInPrevious {
+    animation: fade-in-previous 500ms;
+}
+
+
+/****************** FADE-IN ANIMATIONS *************/
+@keyframes fade-in-next {
+    0% {
+        transform-origin: right;
+        transform: scaleX(0);
+    }
+    100% {
+        transform-origin: right;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes fade-in-previous {
+    0% {
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+    100% {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}

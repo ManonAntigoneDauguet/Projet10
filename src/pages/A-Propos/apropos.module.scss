@@ -1,0 +1,24 @@
+@import "../../style/utils/variables";
+@import "../../style/utils/mixins";
+
+
+.apropos__content {
+    max-width: 1240px;
+    margin: 0 auto;
+    @include mobile-only {
+        padding: 0 20px;
+    }
+    @include pagePresentationImg("../../assets/Image_source_2.png");
+}
+
+.txtContainer {
+    position: relative;
+    padding: 40px 100px 25px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @include mobile-only {
+        gap: 20px;
+        padding: 20px 0px 5px 0px;
+    }
+}

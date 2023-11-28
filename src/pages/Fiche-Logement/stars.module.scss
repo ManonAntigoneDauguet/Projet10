@@ -1,0 +1,14 @@
+@import "../../style/utils/variables";
+@import "../../style/utils/mixins";
+
+
+.starsContainer {
+    height: 36px;
+    width: 36px;
+    display: flex;
+    flex-direction: row;
+    @include mobile-only {
+        height: 18px;
+        width: 18px;
+    }
+}

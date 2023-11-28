@@ -1,0 +1,28 @@
+@import "../../style/utils/variables";
+@import "../../style/utils/mixins";
+
+
+.profile {
+    height: 64px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    @include mobile-only {
+        height: 33px;
+        width: 135px;
+    }
+}
+
+.profilePicture {
+    object-fit: cover;
+    height: 64px;
+    width: 64px;
+    clip-path: circle(50% at 50% 50%);
+    @include mobile-only {
+        height: 32px;
+        width: 32px;
+    }
+}  

@@ -1,13 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from './pages/Home/index';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import { CurrentPageProvider } from './utils/context';
+// Layouts
+import Header from './layouts/Header';
+import Footer from './layouts/Footer';
+// Pages
+import Home from './pages/Home/index';
+import APropos from './pages/A-Propos/index'
+import FLogement from './pages/Fiche-Logement/index'
+import Error from './pages/Error/index'
+// Style
 import './style/main.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  
   <React.StrictMode>
-    <Home />
+    <Router>
+      <CurrentPageProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/a-propos" element={<APropos />} />
+          <Route path="/logement/:locationId" element={<FLogement />} />
+          <Route path='*' element={<Error />} />
+        </Routes>
+        <Footer />
+      </CurrentPageProvider>  
+    </Router>
   </React.StrictMode>
 );
 

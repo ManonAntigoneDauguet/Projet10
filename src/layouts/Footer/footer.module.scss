@@ -1,0 +1,26 @@
+@import "../../style/utils/variables";
+@import "../../style/utils/mixins";
+
+footer {
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    @include mobile-only {
+        padding: 70px 0;
+    }
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    margin: auto;
+    @include mobile-only {
+        width: 120px;
+        font-size: 12px;
+        gap: 15px;
+    }
+}
