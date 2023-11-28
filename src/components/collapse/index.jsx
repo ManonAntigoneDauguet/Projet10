@@ -18,7 +18,7 @@ function Collapse({ category, details, isLittleLabel }) {
         <div className={ isOpen ? `${style.collapse__Open }` : `${ style.collapse__Close }` }>
             <div className={ style.categoryContainer }>
                 <label 
-                    htmlFor="fiabilite" 
+                    htmlFor={ category } 
                     className={ isLittleLabel ? style.littleLabel : style.bigLabel } >
                     { category }
                 </label>
@@ -32,8 +32,8 @@ function Collapse({ category, details, isLittleLabel }) {
             <input 
                 className={ style.collapseCheckbox }
                 type="checkbox" 
-                id="fiabilite" 
-                name="fiabilite" 
+                id={ category } 
+                name={ category } 
                 onChange={ handleChange }>
             </input>
             <div className={ style.detailsContainer }>
