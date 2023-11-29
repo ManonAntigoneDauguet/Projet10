@@ -81,6 +81,7 @@
     font-size: 50px;
     height: 32px;
     width: 32px;
+    cursor: pointer;
     &:checked + .detailsContainer {
         transform: scale(1);
     }
